@@ -16,6 +16,9 @@
 		84487D762AD6960C00222BD0 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 84487D752AD6960C00222BD0 /* Then */; };
 		84487D792AD6990100222BD0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D782AD6990100222BD0 /* UIColor+Extension.swift */; };
 		84487D7B2AD699B500222BD0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D7A2AD699B500222BD0 /* UILabel+Extension.swift */; };
+		84487D7E2AD69BCD00222BD0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D7D2AD69BCD00222BD0 /* TabBarViewController.swift */; };
+		84487D812AD6B2CF00222BD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D802AD6B2CF00222BD0 /* HomeViewController.swift */; };
+		84487D852AD6B32700222BD0 /* GameReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D842AD6B32700222BD0 /* GameReplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		84487D6B2AD695BB00222BD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84487D782AD6990100222BD0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		84487D7A2AD699B500222BD0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		84487D7D2AD69BCD00222BD0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		84487D802AD6B2CF00222BD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84487D842AD6B32700222BD0 /* GameReplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameReplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +70,7 @@
 			children = (
 				84487D7C2AD699CD00222BD0 /* Resource */,
 				84487D772AD698F200222BD0 /* Helper */,
-				84487D612AD695B800222BD0 /* ViewController.swift */,
+				84487D7F2AD69BD300222BD0 /* ViewController */,
 				84487D662AD695BB00222BD0 /* Assets.xcassets */,
 				84487D682AD695BB00222BD0 /* LaunchScreen.storyboard */,
 				84487D6B2AD695BB00222BD0 /* Info.plist */,
@@ -88,6 +94,17 @@
 				84487D5F2AD695B800222BD0 /* SceneDelegate.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		84487D7F2AD69BD300222BD0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84487D612AD695B800222BD0 /* ViewController.swift */,
+				84487D7D2AD69BCD00222BD0 /* TabBarViewController.swift */,
+				84487D802AD6B2CF00222BD0 /* HomeViewController.swift */,
+				84487D842AD6B32700222BD0 /* GameReplayViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +189,10 @@
 				84487D5E2AD695B800222BD0 /* AppDelegate.swift in Sources */,
 				84487D7B2AD699B500222BD0 /* UILabel+Extension.swift in Sources */,
 				84487D602AD695B800222BD0 /* SceneDelegate.swift in Sources */,
+				84487D7E2AD69BCD00222BD0 /* TabBarViewController.swift in Sources */,
+				84487D812AD6B2CF00222BD0 /* HomeViewController.swift in Sources */,
 				84487D792AD6990100222BD0 /* UIColor+Extension.swift in Sources */,
+				84487D852AD6B32700222BD0 /* GameReplayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
