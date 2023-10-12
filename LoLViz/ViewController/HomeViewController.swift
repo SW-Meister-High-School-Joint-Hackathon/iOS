@@ -14,6 +14,10 @@ final class HomeViewController: UIViewController {
     let logoImage = UIImageView().then {
         $0.image = UIImage(named: "logo")
     }
+    
+    let logo = UIImageView().then {
+        $0.image = UIImage(named: "LoLViz")
+    }
 
     let mainImageView = UIImageView().then {
         $0.image = UIImage(named: "LeagueOfLegends")
@@ -31,13 +35,18 @@ final class HomeViewController: UIViewController {
     }
     
     func addView() {
-        [logoImage, mainImageView].forEach { view.addSubview($0) }
+        [logoImage, logo, mainImageView].forEach { view.addSubview($0) }
     }
     
     func setLayout() {
         logoImage.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(14)
+        }
+        
+        logo.snp.makeConstraints {
+            $0.leading.equalTo(logoImage.snp.trailing).offset(7)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(23)
         }
         
         mainImageView.snp.makeConstraints {

@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 final class FinalListViewController: UIViewController {
+    
+    let logoImage = UIImageView().then {
+        $0.image = UIImage(named: "logo")
+    }
+    
+    let logo = UIImageView().then {
+        $0.image = UIImage(named: "LoLViz")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setup()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setup() {
+        addView()
+        setLayout()
     }
-    */
 
+    func addView() {
+        [logoImage, logo].forEach { view.addSubview($0) }
+    }
+    
+    func setLayout() {
+        logoImage.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(14)
+        }
+        
+        logo.snp.makeConstraints {
+            $0.leading.equalTo(logoImage.snp.trailing).offset(7)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(23)
+        }
+    }
+    
 }

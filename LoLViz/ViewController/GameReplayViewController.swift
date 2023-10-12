@@ -19,6 +19,10 @@ final class GameReplayViewController: UIViewController {
         $0.image = UIImage(named: "logo")
     }
     
+    let logo = UIImageView().then {
+        $0.image = UIImage(named: "LoLViz")
+    }
+    
     let teamScoreTitle = UILabel().then {
         $0.text = "팀 점수"
         $0.textColor = .white
@@ -45,6 +49,19 @@ final class GameReplayViewController: UIViewController {
         $0.backgroundColor = .darkGreen
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 6
+    }
+    
+    let killChart = KillChartView()
+    let towerChart = TowerChartView().then {
+        $0.isHidden = true
+    }
+    
+    let suppressChart = SuppressChartView().then {
+        $0.isHidden = true
+    }
+    
+    let monsterChart = MonsterChartView().then {
+        $0.isHidden = true
     }
     
     let event = UILabel().then {
@@ -79,11 +96,17 @@ final class GameReplayViewController: UIViewController {
     func setup() {
         addView()
         setLayout()
+        
+        killButton.addTarget(self, action: #selector(killButtonTapped), for: .touchUpInside)
+        towerButton.addTarget(self, action: #selector(towerButtonTapped), for: .touchUpInside)
+        suppressorButton.addTarget(self, action: #selector(suppressorButtonTapped), for: .touchUpInside)
+        monsterButton.addTarget(self, action: #selector(monsterButtonTapped), for: .touchUpInside)
     }
     
     func addView() {
         [killButton, towerButton, suppressorButton, monsterButton].forEach { self.eventButtonView.addSubview($0) }
-        [logoImage, scoreImage, teamScoreTitle, eventTitle, descriptionLabel, mainBackground, event, eventButtonView, memberTitle, memberImage].forEach { self.contentView.addSubview($0) }
+        [killChart, towerChart, suppressChart, monsterChart].forEach { mainBackground.addSubview($0) }
+        [logoImage, logo, scoreImage, teamScoreTitle, eventTitle, descriptionLabel, mainBackground, event, eventButtonView, memberTitle, memberImage].forEach { self.contentView.addSubview($0) }
         scrollView.addSubview(contentView)
         self.view.addSubview(scrollView)
         
@@ -106,6 +129,11 @@ final class GameReplayViewController: UIViewController {
             $0.top.equalTo(contentView.snp.top).offset(14)
         }
         
+        logo.snp.makeConstraints {
+            $0.leading.equalTo(logoImage.snp.trailing).offset(7)
+            $0.top.equalTo(contentView.snp.top).offset(23)
+        }
+        
         teamScoreTitle.snp.makeConstraints {
             $0.top.equalTo(logoImage.snp.bottom).offset(23)
             $0.leading.equalToSuperview().inset(22)
@@ -124,6 +152,30 @@ final class GameReplayViewController: UIViewController {
         descriptionLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(22)
             $0.top.equalTo(eventTitle.snp.bottom).offset(12)
+        }
+        
+        killChart.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(50)
+            $0.top.equalToSuperview().inset(30)
+            $0.height.equalTo(260)
+        }
+        
+        towerChart.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(50)
+            $0.top.equalToSuperview().inset(30)
+            $0.height.equalTo(260)
+        }
+        
+        suppressChart.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(50)
+            $0.top.equalToSuperview().inset(30)
+            $0.height.equalTo(260)
+        }
+        
+        monsterChart.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(50)
+            $0.top.equalToSuperview().inset(30)
+            $0.height.equalTo(260)
         }
         
         mainBackground.snp.makeConstraints {
@@ -179,4 +231,45 @@ final class GameReplayViewController: UIViewController {
         }
         
     }
+    
+    @objc func killButtonTapped() {
+        eventTitle.text = "팀별 킬 횟수"
+        descriptionLabel.text = "각 플레이 팀의 킬 수를 나타냅니다."
+        
+        killChart.isHidden = false
+        towerChart.isHidden = true
+        suppressChart.isHidden = true
+        monsterChart.isHidden = true
+    }
+    
+    @objc func towerButtonTapped() {
+        eventTitle.text = "팀별 타워 파괴 횟수"
+        descriptionLabel.text = "각 플레이 팀의 타워 파괴 수를 나타냅니다."
+        
+        killChart.isHidden = true
+        towerChart.isHidden = false
+        suppressChart.isHidden = true
+        monsterChart.isHidden = true
+    }
+    
+    @objc func suppressorButtonTapped() {
+        eventTitle.text = "팀별 억제기 파괴 횟수"
+        descriptionLabel.text = "각 플레이 팀의 억제기 파괴 횟수를 나타냅니다."
+        
+        killChart.isHidden = true
+        towerChart.isHidden = true
+        suppressChart.isHidden = false
+        monsterChart.isHidden = true
+    }
+    
+    @objc func monsterButtonTapped() {
+        eventTitle.text = "팀별 몬스터 킬 횟수"
+        descriptionLabel.text = "각 플레이 팀의 몬스터 킬 수를 나타냅니다."
+        
+        killChart.isHidden = true
+        towerChart.isHidden = true
+        suppressChart.isHidden = true
+        monsterChart.isHidden = false
+    }
+    
 }
