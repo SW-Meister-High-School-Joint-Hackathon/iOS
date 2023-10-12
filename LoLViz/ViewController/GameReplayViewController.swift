@@ -106,7 +106,7 @@ final class GameReplayViewController: UIViewController {
     func addView() {
         [killButton, towerButton, suppressorButton, monsterButton].forEach { self.eventButtonView.addSubview($0) }
         [killChart, towerChart, suppressChart, monsterChart].forEach { mainBackground.addSubview($0) }
-        [logoImage, logo, scoreImage, teamScoreTitle, eventTitle, descriptionLabel, mainBackground, event, eventButtonView, memberTitle, memberImage].forEach { self.contentView.addSubview($0) }
+        [logoImage, logo, scoreImage, teamScoreTitle, eventTitle, descriptionLabel, mainBackground,  event, eventButtonView, memberTitle, memberImage].forEach { self.contentView.addSubview($0) }
         scrollView.addSubview(contentView)
         self.view.addSubview(scrollView)
         
@@ -126,12 +126,12 @@ final class GameReplayViewController: UIViewController {
         
         logoImage.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16)
-            $0.top.equalTo(contentView.snp.top).offset(14)
+            $0.top.equalTo(contentView.snp.top)
         }
         
         logo.snp.makeConstraints {
             $0.leading.equalTo(logoImage.snp.trailing).offset(7)
-            $0.top.equalTo(contentView.snp.top).offset(23)
+            $0.top.equalTo(contentView.snp.top).offset(13)
         }
         
         teamScoreTitle.snp.makeConstraints {
@@ -183,9 +183,9 @@ final class GameReplayViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(22)
             $0.height.equalTo(342)
         }
-        
+    
         event.snp.makeConstraints {
-            $0.top.equalTo(mainBackground.snp.bottom).offset(20)
+            $0.top.equalTo(mainBackground.snp.bottom).offset(23)
             $0.leading.equalToSuperview().inset(22)
         }
         

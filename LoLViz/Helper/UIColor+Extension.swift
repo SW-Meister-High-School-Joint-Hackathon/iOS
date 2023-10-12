@@ -14,4 +14,6 @@ extension UIColor {
     @nonobjc class var pink: UIColor { return UIColor(named: "pink")! }
     @nonobjc class var blue: UIColor { return UIColor(named: "blue")! }
     @nonobjc class var purple: UIColor { return UIColor(named: "purple")! }
+    @nonobjc class var darkpurple: UIColor { return UIColor(named: "darkpurple")! }
+    @nonobjc class var sky: UIColor { return UIColor(named: "sky")! }
 }
