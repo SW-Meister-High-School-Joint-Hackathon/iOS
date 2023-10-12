@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
+    
+    let logoImage = UIImageView().then {
+        $0.image = UIImage(named: "logo")
+    }
+
+    let mainImageView = UIImageView().then {
+        $0.image = UIImage(named: "LeagueOfLegends")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setup()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setup() {
+        addView()
+        setLayout()
     }
-    */
+    
+    func addView() {
+        [logoImage, mainImageView].forEach { view.addSubview($0) }
+    }
+    
+    func setLayout() {
+        logoImage.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(14)
+        }
+        
+        mainImageView.snp.makeConstraints {
+            $0.top.equalTo(logoImage.snp.bottom).offset(23)
+            $0.leading.trailing.equalToSuperview()
+        }
+    }
 
 }

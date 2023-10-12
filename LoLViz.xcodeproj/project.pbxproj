@@ -19,6 +19,12 @@
 		84487D7E2AD69BCD00222BD0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D7D2AD69BCD00222BD0 /* TabBarViewController.swift */; };
 		84487D812AD6B2CF00222BD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D802AD6B2CF00222BD0 /* HomeViewController.swift */; };
 		84487D852AD6B32700222BD0 /* GameReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D842AD6B32700222BD0 /* GameReplayViewController.swift */; };
+		84487D892AD6B75E00222BD0 /* KillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D882AD6B75E00222BD0 /* KillButton.swift */; };
+		84487D8B2AD6B77B00222BD0 /* TowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D8A2AD6B77B00222BD0 /* TowerButton.swift */; };
+		84487D8D2AD6B78B00222BD0 /* SuppressorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D8C2AD6B78B00222BD0 /* SuppressorButton.swift */; };
+		84487D8F2AD6B7A000222BD0 /* MonsterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D8E2AD6B7A000222BD0 /* MonsterButton.swift */; };
+		84487D922AD7771700222BD0 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D912AD7771700222BD0 /* SliderView.swift */; };
+		84487D942AD779C600222BD0 /* FinalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84487D932AD779C600222BD0 /* FinalListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		84487D7D2AD69BCD00222BD0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		84487D802AD6B2CF00222BD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84487D842AD6B32700222BD0 /* GameReplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameReplayViewController.swift; sourceTree = "<group>"; };
+		84487D882AD6B75E00222BD0 /* KillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillButton.swift; sourceTree = "<group>"; };
+		84487D8A2AD6B77B00222BD0 /* TowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerButton.swift; sourceTree = "<group>"; };
+		84487D8C2AD6B78B00222BD0 /* SuppressorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppressorButton.swift; sourceTree = "<group>"; };
+		84487D8E2AD6B7A000222BD0 /* MonsterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterButton.swift; sourceTree = "<group>"; };
+		84487D912AD7771700222BD0 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		84487D932AD779C600222BD0 /* FinalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,8 @@
 				84487D7C2AD699CD00222BD0 /* Resource */,
 				84487D772AD698F200222BD0 /* Helper */,
 				84487D7F2AD69BD300222BD0 /* ViewController */,
+				84487D862AD6B6DC00222BD0 /* View */,
+				84487D902AD6CB0800222BD0 /* Model */,
 				84487D662AD695BB00222BD0 /* Assets.xcassets */,
 				84487D682AD695BB00222BD0 /* LaunchScreen.storyboard */,
 				84487D6B2AD695BB00222BD0 /* Info.plist */,
@@ -103,8 +117,36 @@
 				84487D7D2AD69BCD00222BD0 /* TabBarViewController.swift */,
 				84487D802AD6B2CF00222BD0 /* HomeViewController.swift */,
 				84487D842AD6B32700222BD0 /* GameReplayViewController.swift */,
+				84487D932AD779C600222BD0 /* FinalListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84487D862AD6B6DC00222BD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84487D872AD6B74A00222BD0 /* Button */,
+				84487D912AD7771700222BD0 /* SliderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84487D872AD6B74A00222BD0 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				84487D882AD6B75E00222BD0 /* KillButton.swift */,
+				84487D8A2AD6B77B00222BD0 /* TowerButton.swift */,
+				84487D8C2AD6B78B00222BD0 /* SuppressorButton.swift */,
+				84487D8E2AD6B7A000222BD0 /* MonsterButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		84487D902AD6CB0800222BD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,9 +228,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				84487D622AD695B800222BD0 /* ViewController.swift in Sources */,
+				84487D922AD7771700222BD0 /* SliderView.swift in Sources */,
 				84487D5E2AD695B800222BD0 /* AppDelegate.swift in Sources */,
+				84487D942AD779C600222BD0 /* FinalListViewController.swift in Sources */,
 				84487D7B2AD699B500222BD0 /* UILabel+Extension.swift in Sources */,
+				84487D8B2AD6B77B00222BD0 /* TowerButton.swift in Sources */,
 				84487D602AD695B800222BD0 /* SceneDelegate.swift in Sources */,
+				84487D8D2AD6B78B00222BD0 /* SuppressorButton.swift in Sources */,
+				84487D8F2AD6B7A000222BD0 /* MonsterButton.swift in Sources */,
+				84487D892AD6B75E00222BD0 /* KillButton.swift in Sources */,
 				84487D7E2AD69BCD00222BD0 /* TabBarViewController.swift in Sources */,
 				84487D812AD6B2CF00222BD0 /* HomeViewController.swift in Sources */,
 				84487D792AD6990100222BD0 /* UIColor+Extension.swift in Sources */,
